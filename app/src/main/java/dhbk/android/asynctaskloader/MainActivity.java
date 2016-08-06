@@ -14,6 +14,21 @@ import butterknife.ButterKnife;
 import hugo.weaving.DebugLog;
 
 // TODO: 8/6/16 0  because we call this LoaderManager.LoaderCallbacks<ArrayList<Employee>>, so we have the callback with Employee
+
+/**
+ *         getSupportLoaderManager().initLoader(1, null, this).forceLoad() se gọi lần lượt
+ 08-06 10:19:34.215 3227-3227/dhbk.android.asynctaskloader V/MainActivity: ⇢ onCreateLoader(id=1, args=null)
+ 08-06 10:19:34.220 3227-3227/dhbk.android.asynctaskloader V/MainActivity: ⇠ onCreateLoader [3ms] = EmployeeLoader{16ddecc6 id=0}
+ 08-06 10:19:34.224 3227-3227/dhbk.android.asynctaskloader V/MainActivity: ⇢ onStart()
+ 08-06 10:19:34.225 3227-3227/dhbk.android.asynctaskloader V/MainActivity: ⇠ onStart [0ms]
+ 08-06 10:19:34.227 3227-3284/dhbk.android.asynctaskloader V/EmployeeLoader: ⇢ loadInBackground() [Thread:"ModernAsyncTask #1"]
+ 08-06 10:19:34.229 3227-3284/dhbk.android.asynctaskloader V/EmployeeLoader: ⇠ loadInBackground [1ms] = [dhbk.android.asynctaskloader.Employee@287bf7dd, dhbk.android.asynctaskloader.Employee@143c0f52, dhbk.android.asynctaskloader.Employee@15a9b223]
+ 08-06 10:19:34.323 3227-3227/dhbk.android.asynctaskloader V/MainActivity: ⇢ onLoadFinished(loader=EmployeeLoader{16ddecc6 id=1}, data=[dhbk.android.asynctaskloader.Employee@287bf7dd, dhbk.android.asynctaskloader.Employee@143c0f52, dhbk.android.asynctaskloader.Employee@15a9b223])
+ 08-06 10:19:34.323 3227-3227/dhbk.android.asynctaskloader V/MainActivity: ⇠ onLoadFinished [0ms]
+ 08-06 10:32:09.254 3227-3227/dhbk.android.asynctaskloader V/MainActivity: ⇢ onStart()
+ 08-06 10:32:09.254 3227-3227/dhbk.android.asynctaskloader V/MainActivity: ⇠ onStart [0ms]
+
+ */
 public class MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<ArrayList<Employee>> {
 
     private static final String TAG = MainActivity.class.getName();
