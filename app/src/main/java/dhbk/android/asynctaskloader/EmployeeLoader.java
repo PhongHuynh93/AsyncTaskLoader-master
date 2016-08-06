@@ -6,6 +6,8 @@ import android.util.Log;
 
 import java.util.ArrayList;
 
+import hugo.weaving.DebugLog;
+
 /**
  * Created by huynhducthanhphong on 4/15/16.
  */
@@ -23,6 +25,7 @@ public class EmployeeLoader extends AsyncTaskLoader<ArrayList<Employee>> {
      */
     // background, add to database
     @Override
+    @DebugLog
     public ArrayList<Employee> loadInBackground() {
         Log.i(TAG, Constant.LOADER_ACTIVITY + "loadInBackground: ");
         ArrayList<Employee> list = new ArrayList<>();

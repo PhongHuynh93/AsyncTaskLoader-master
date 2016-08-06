@@ -11,6 +11,7 @@ import java.util.ArrayList;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import hugo.weaving.DebugLog;
 
 // TODO: 8/6/16 0  because we call this LoaderManager.LoaderCallbacks<ArrayList<Employee>>, so we have the callback with Employee
 public class MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<ArrayList<Employee>> {
@@ -45,16 +46,20 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         Log.i(TAG, Constant.LOADER_ACTIVITY + "onCreate: " + mEmployees.getCount());
     }
 
-    // todo 2 Instantiate and return a new Loader for the given ID, initLoader() call this
+
+    // todo 2a Instantiate and return a new Loader for the given ID, initLoader() call this
     // khi chưa có load thì nó sẽ gọi hàm này đầu tiên
+    @DebugLog
     @Override
     public Loader<ArrayList<Employee>> onCreateLoader(int id, Bundle args) {
         Log.i(TAG, Constant.LOADER_ACTIVITY + "onCreateLoader");
+        // TODO: 8/6/16 2b new 1 loader với id là para
         return new EmployeeLoader(MainActivity.this);
     }
 
 
     // todo 3 Called when a previously created loader has finished its load.
+    @DebugLog
     @Override
     public void onLoadFinished(Loader<ArrayList<Employee>> loader, ArrayList<Employee> data) {
         Log.i(TAG, Constant.LOADER_ACTIVITY + "onLoadFinished: ");
@@ -65,6 +70,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
     // todo 4 Called when a previously created loader is being reset, and thus making its data unavailable.
     // khi có hàm restartLoader() thì callback này mới được gọi
+    @DebugLog
     @Override
     public void onLoaderReset(Loader<ArrayList<Employee>> loader) {
         // xóa data cũ
@@ -72,7 +78,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         empAdapter.setEmployees(new ArrayList<Employee>());
     }
 
-
+    @DebugLog
     @Override
     protected void onStart() {
         super.onStart();
