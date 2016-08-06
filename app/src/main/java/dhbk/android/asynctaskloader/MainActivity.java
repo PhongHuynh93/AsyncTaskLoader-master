@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
+// TODO: 8/6/16 0  because we call this LoaderManager.LoaderCallbacks<ArrayList<Employee>>, so we have the callback with Employee
 public class MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<ArrayList<Employee>> {
 
     private static final String TAG = MainActivity.class.getName();

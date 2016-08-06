@@ -16,6 +16,10 @@ public class EmployeeLoader extends AsyncTaskLoader<ArrayList<Employee>> {
         super(context);
     }
 
+    /**
+     * todo 5 Called on a worker thread to perform the actual load and to return the result of the load operation.
+     * @return
+     */
     // background, add to database
     @Override
     public ArrayList<Employee> loadInBackground() {
