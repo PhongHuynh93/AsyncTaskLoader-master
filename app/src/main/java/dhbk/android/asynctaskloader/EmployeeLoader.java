@@ -18,6 +18,7 @@ public class EmployeeLoader extends AsyncTaskLoader<ArrayList<Employee>> {
 
     /**
      * todo 5 Called on a worker thread to perform the actual load and to return the result of the load operation.
+     * todo
      * @return
      */
     // background, add to database

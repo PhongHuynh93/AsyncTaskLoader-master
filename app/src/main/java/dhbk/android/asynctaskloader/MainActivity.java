@@ -32,6 +32,10 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
         /**
          * todo 1 initialize a Loader within the activity's onCreate() method
+         *
+         * initLoader: call {@link MainActivity#onCreateLoader}
+         * forceLoad: Force an asynchronous load. call {@link EmployeeLoader#loadInBackground}
+         *
          * If the loader specified by the ID already exists, the last created loader is reused.
          */
         // load data vao list
@@ -41,7 +45,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         Log.i(TAG, Constant.LOADER_ACTIVITY + "onCreate: " + mEmployees.getCount());
     }
 
-    // todo 2 Instantiate and return a new Loader for the given ID.
+    // todo 2 Instantiate and return a new Loader for the given ID, initLoader() call this
     // khi chưa có load thì nó sẽ gọi hàm này đầu tiên
     @Override
     public Loader<ArrayList<Employee>> onCreateLoader(int id, Bundle args) {
